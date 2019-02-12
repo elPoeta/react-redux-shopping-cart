@@ -19,11 +19,11 @@ class BookItem extends React.Component {
     }
   };
   render() {
-    const { title, price, description } = this.props.book;
+    const { title, price, description, image } = this.props.book;
     return (
       <div className="card-image">
         <img
-          src="https://clipground.com/images/school-books-clipart-2.jpg"
+          src={image}
           alt="books"
         />
         <span className="card-title">{title}</span>
