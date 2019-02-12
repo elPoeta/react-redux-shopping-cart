@@ -1,7 +1,12 @@
 import * as types from "./types";
 
-export const getBooks = () => dispatch => {
-  const books = [
+export const getBooks = () => async dispatch => {
+  const response = await fetch('https://api.sheety.co/cb14b36e-1513-45fa-bdb0-8b35c4feaac8');
+  const data = await response.json();
+  dispatch({ type: types.GET_BOOKS_SUCCESS, payload: data });
+};
+
+/*const books = [
     {
       id: 1,
       title: "Learn Redux",
@@ -26,6 +31,5 @@ export const getBooks = () => dispatch => {
       price: 43,
       isAvailable: true
     }
-  ];
-  dispatch({ type: types.GET_BOOKS_SUCCESS, payload: books });
-};
+  ];*/
+
